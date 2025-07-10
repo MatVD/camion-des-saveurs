@@ -115,9 +115,9 @@ class Menu
         return $this->image;
     }
 
-    public function setImgae(?string $imae): static
+    public function setImage(?string $image): static
     {
-        $this->image = $imae;
+        $this->image = $image;
 
         return $this;
     }

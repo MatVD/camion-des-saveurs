@@ -32,7 +32,7 @@ class Menu
     private ?bool $available = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $imae = null;
+    private ?string $image = null;
 
     /**
      * @var Collection<int, OrderItem>
@@ -110,14 +110,14 @@ class Menu
         return $this;
     }
 
-    public function getImae(): ?string
+    public function getImage(): ?string
     {
-        return $this->imae;
+        return $this->image;
     }
 
-    public function setImae(?string $imae): static
+    public function setImgae(?string $imae): static
     {
-        $this->imae = $imae;
+        $this->image = $imae;
 
         return $this;
     }

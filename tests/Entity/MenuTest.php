@@ -94,18 +94,18 @@ class MenuTest extends TestCase
     public function testSetAndGetImae(): void
     {
         $image = 'burger-royal.jpg';
-        $result = $this->menu->setImae($image);
+        $result = $this->menu->setImage($image);
         
         $this->assertSame($this->menu, $result);
-        $this->assertSame($image, $this->menu->getImae());
+        $this->assertSame($image, $this->menu->getImage());
     }
 
     public function testSetAndGetImaeWithNull(): void
     {
-        $result = $this->menu->setImae(null);
+        $result = $this->menu->setImage(null);
         
         $this->assertSame($this->menu, $result);
-        $this->assertNull($this->menu->getImae());
+        $this->assertNull($this->menu->getImage());
     }
 
     public function testConstructorInitializesOrderItemsCollection(): void
@@ -219,7 +219,7 @@ class MenuTest extends TestCase
             ->setPrice('10.00')
             ->setCategory('Test Category')
             ->setAvailable(true)
-            ->setImae('test.jpg');
+            ->setImage('test.jpg');
         
         $this->assertSame($this->menu, $result);
         $this->assertSame('Test Menu', $this->menu->getName());
@@ -227,6 +227,6 @@ class MenuTest extends TestCase
         $this->assertSame('10.00', $this->menu->getPrice());
         $this->assertSame('Test Category', $this->menu->getCategory());
         $this->assertTrue($this->menu->isAvailable());
-        $this->assertSame('test.jpg', $this->menu->getImae());
+        $this->assertSame('test.jpg', $this->menu->getImage());
     }
 }

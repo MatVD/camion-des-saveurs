@@ -12,10 +12,8 @@ A Symfony-based backend API for managing a food truck business, including menu m
 ## Tech Stack
 
 - **PHP 8.x** with Symfony framework
-- **PostgreSQL** database
+- **MySQL** database
 - **Doctrine ORM** for database management
-- **Stimulus** for frontend interactivity
-- **Asset Mapper** for asset management
 - **Docker** support with compose files
 
 ## Project Structure
@@ -42,8 +40,8 @@ templates/          # Twig templates
 
 - PHP 8.x
 - Composer
-- PostgreSQL
-- Docker (optional)
+- MySQL
+- Docker
 
 ### Installation
 
@@ -53,30 +51,20 @@ templates/          # Twig templates
    composer install
    ```
 
-3. Set up environment variables:
+3. Use Docker Compose:
    ```bash
-   cp .env .env.local
-   # Edit .env.local with your database credentials
+   docker-compose up -d
    ```
 
 4. Create and migrate the database:
    ```bash
-   php bin/console doctrine:database:create
-   php bin/console doctrine:migrations:migrate
+  symfony console doctrine:migrations:migrate
    ```
 
 5. Start the development server:
    ```bash
-   symfony server:start
+   symfony serve
    ```
-
-### Using Docker
-
-Alternatively, use Docker Compose:
-
-```bash
-docker-compose up -d
-```
 
 ## Database Schema
 
@@ -94,10 +82,6 @@ The application includes the following main entities:
 ```bash
 php bin/phpunit
 ```
-
-### Asset Management
-
-Assets are managed using Symfony's Asset Mapper. The main entry point is [`assets/app.js`](assets/app.js).
 
 ### Database Migrations
 
